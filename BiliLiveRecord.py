@@ -25,7 +25,7 @@ while True:
     j = '{' + html.split('window.__NEPTUNE_IS_MY_WAIFU__={')[1].split('</script>')[0]
     room = json.loads(j)
     if room['roomInitRes']['data']['live_status'] == 1:
-        liveurl = room['playUrlRes']['data']['durl'][0]['url'] # 0大概就是主线？
+        liveurl = room['roomInitRes']['data']['play_url']['durl'][0]['url'] # 0大概就是主线？
         #print(liveurl)
         filename = roomno + '_' + time.strftime("%Y%m%d%H%M%S", time.localtime()) + '.flv'
         print('Recording to file ' + filename)
