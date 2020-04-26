@@ -29,7 +29,7 @@ while True:
     roomid = roominfo['data']['room_info']['room_id']
     if roominfo['data']['room_info']['live_status'] == 1:
         try:
-            playUrl = json.loads(request.urlopen('https://api.live.bilibili.com/room/v1/Room/playUrl?cid=' + str(roomid) + '&qn=4').read().decode('utf-8'))
+            playUrl = json.loads(request.urlopen('https://api.live.bilibili.com/room/v1/Room/playUrl?cid=' + str(roomid) + '&qn=10000&platform=web').read().decode('utf-8'))
             if playUrl['code'] != 0:
                 print('Get live stream urls failed: ' + playUrl['message'])
                 continue
